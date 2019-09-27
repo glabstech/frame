@@ -29,10 +29,8 @@
         "jquery": "^3.3.1"
     },
     "private": true,
-    "vendorCopy": [{
-            "from": "node_modules/jquery/dist/jquery.min.js",
-            "to": "lib/jquery/jquery.min.js"
-        },
+    "vendorCopy": [
+
         {
             "from": "node_modules/aos/dist/aos.css",
             "to": "lib/aos/aos.css"

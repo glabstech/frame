@@ -12,7 +12,7 @@
             </div>   
 
             <div class="col-md-6 col-lg-7 col-sm-12 contact-form a-left a-fadeIn a-delay-2">
-				<?php d//ynamic_sidebar('footer-col-2'); ?>
+				<?php //dynamic_sidebar('footer-col-2'); ?>
 				<br><br><br>
             </div>
         </div>

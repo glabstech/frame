@@ -3,7 +3,24 @@
 /*
     Include Admin Resources 
 */
-include_once	'admin/lib/advanced-custom-fields-pro/acf.php';
+
+/*
+    Include Admin Resources 
+*/
+add_filter('acf/settings/path', 'my_acf_settings_path');
+function my_acf_settings_path( $path ) {
+    $path = get_stylesheet_directory() . '/admin/lib/acfpro';
+    return $path;
+}
+add_filter('acf/settings/dir', 'my_acf_settings_dir');
+ 
+function my_acf_settings_dir( $dir ) {
+    $dir = get_stylesheet_directory_uri() . '/admin/lib/acfpro/';
+    return $dir;
+}
+
+// include_once	'admin/lib/advanced-custom-fields-pro/acf.php';
+include_once	'admin/lib/acfpro/acf.php';
 include_once	'admin/lib/acf-options-page/acf-options-page.php';
 include_once	'admin/lib/acf-repeater/acf-repeater.php';
 include_once	'admin/lib/acf-field-column/acf-column.php';
@@ -44,8 +61,8 @@ include_once	'includes/util_functions.php';
     Sidebar
 */
 include_once    'includes/sidebar.php';
-
 include_once    'includes/enqueue.php';
+
 
 /*
     Bootstrap 4 Nav Walker

@@ -52,7 +52,7 @@ include_once	'admin/lib/acf-field-column/acf-column.php';
 //include_once	'includes/widgets/hash-tags.php';
 
 //load custom options page
-//include_once	'admin/options_theme-options.php';
+include_once	'admin/options_theme-options.php';
 
 //utility
 include_once	'includes/util_functions.php';

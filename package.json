@@ -29,7 +29,7 @@
     "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",
     "@fortawesome/fontawesome-free": "^5.11.2",
-    "owl.carousel":"^2.3.4"
+    "slick-carousel":"^1.8.1"
   },
   "private": true,
   "vendorCopy": [
@@ -54,20 +54,20 @@
       "to": "lib/bootstrap/bootstrap.min.css"
     },
     {
-      "from": "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
-      "to": "lib/owl.carousel/owl.carousel.min.css"
-    },
-    {
-      "from": "node_modules/owl.carousel/dist/assets/ajax-loader.gif",
+      "from": "node_modules/slick-carousel/slick/ajax-loader.gif",
       "to": "assets/css/ajax-loader.gif"
     },
     {
-      "from": "node_modules/owl.carousel/dist/assets/owl.video.play.png",
-      "to": "assets/css/owl.video.play.png"
+      "from": "node_modules/slick-carousel/slick/slick.min.js",
+      "to": "lib/slick-carousel/slick.min.js"
     },
     {
-      "from": "node_modules/owl.carousel/dist/owl.carousel.min.js",
-      "to": "lib/owl.carousel/owl.carousel.min.js"
+      "from": "node_modules/slick-carousel/slick/slick.css",
+      "to": "lib/slick-carousel/slick.css"
+    },
+    {
+      "from": "node_modules/slick-carousel/slick/slick-theme.css",
+      "to": "lib/slick-carousel/slick-theme.css"
     }
   ]
 }

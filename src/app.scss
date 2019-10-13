@@ -1,4 +1,40 @@
-.test {
-    color: black;
-    font-size: 10px;
-}
+/*
+    VARIABLES
+*/
+@import 'variables';
+
+/*
+    BOOTSTRAP OVERRIDE
+*/
+@import 'bootstrap-override/button';
+@import 'bootstrap-override/grid';
+
+/*
+    COMMON STYLING
+*/
+@import 'common';
+
+/*
+    REUSABLE BLOCKS
+*/
+@import 'o-header/o-header';
+@import 'o-nav/o-nav';
+@import 'o-footer/o-footer';
+@import 'o-cta-boxes/o-cta-boxes';
+@import 'o-testimonials/o-featured-testimonials';
+@import 'o-testimonials/o-comp-testimonials';
+@import 'o-stats/o-stats';
+@import 'o-image-text/o-image-text';
+@import 'o-blog-posts/o-blog-posts';
+@import 'o-partners/o-partners';
+
+/*
+    MISC
+*/
+@import 'mouse-scroll-animation';
+
+/*
+    REUSABLE ACF SECTIONS
+*/
+@import 'o-hero/o-hero';
+

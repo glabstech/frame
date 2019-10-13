@@ -14,13 +14,6 @@ include_once 	'wp_bootstrap_navwalker.php';
 //**enable shortocde on widget area
 add_filter( 'widget_text', 'do_shortcode' );
 
-/* 
-	Register Menu Area
-*/
-register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'MAIN' ),
-) );
-
 
 
 //add_theme_support( 'post-thumbnails' ); 

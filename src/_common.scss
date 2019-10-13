@@ -1,0 +1,70 @@
+body{
+    font-family:'Proxima Nova';
+    font-size:16px;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    margin:0; 
+
+    color:$text-color;
+}
+
+.mainmenu{
+    padding-top:33px;
+}
+
+
+h2{
+    font-size:45px;
+    font-family:'Bebas Neue';
+    color:$text-color;
+    letter-spacing: 0.22em;
+    transform: scaleY(1.35);
+    -webkit-transform: scaleY(1.35);
+    -moz-transform: scaleY(1.35);
+    -ms-transform: scaleY(1.35);
+    -o-transform: scaleY(1.35);
+    margin-top:15px;
+    margin-bottom:30px;
+}
+
+.section-title{
+    &.section-title-lg{
+        font-size:92px;
+        letter-spacing: 0.18em;
+    }
+    &.section-title-sm{
+        font-size:27px;
+    }
+}
+.section-subtitle{
+    font-family:$font-title;
+    font-size:45px;
+    font-weight:normal;
+    letter-spacing: 0.22em;
+    transform: scaleY(1.35);
+    -webkit-transform: scaleY(1.35);
+    -moz-transform: scaleY(1.35);
+    -ms-transform: scaleY(1.35);
+    -o-transform: scaleY(1.35);
+    .section-subtitle-top{
+
+    }
+}
+
+.comp-title-group{
+    label{
+        font-family:$font-text;
+        font-size:17px;
+    }
+    a{
+        display:block;
+        color:$primary-color;
+        font-family:$font-title;
+        font-size:35px;
+        span{
+            
+        }
+    }
+}

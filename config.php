@@ -7,7 +7,7 @@
 /*
     Include Admin Resources 
 */
-add_filter('acf/settings/path', 'my_acf_settings_path');
+// add_filter('acf/settings/path', 'my_acf_settings_path');
 function my_acf_settings_path( $path ) {
     $path = get_stylesheet_directory() . '/admin/lib/acfpro';
     return $path;
@@ -19,10 +19,9 @@ function my_acf_settings_dir( $dir ) {
     return $dir;
 }
 
-// include_once	'admin/lib/advanced-custom-fields-pro/acf.php';
 include_once	'admin/lib/acfpro/acf.php';
 include_once	'admin/lib/acf-options-page/acf-options-page.php';
-include_once	'admin/lib/acf-repeater/acf-repeater.php';
+// include_once	'admin/lib/acf-repeater/acf-repeater.php';
 include_once	'admin/lib/acf-field-column/acf-column.php';
 
 /*
@@ -42,7 +41,7 @@ include_once	'admin/lib/acf-field-column/acf-column.php';
 */
 //include_once	'includes/shortcodes/sc-projects.php';
 //include_once	'includes/shortcodes/sc-news-list.php';
-//include_once	'includes/shortcodes/sc-social-links.php';
+include_once	'includes/shortcodes/sc-social-links.php';
 //include_once	'includes/shortcodes/sc-hashtags.php';
 //include_once	'includes/shortcodes/sc-latest-news.php';
 
@@ -55,13 +54,27 @@ include_once	'admin/lib/acf-field-column/acf-column.php';
 include_once	'admin/options_theme-options.php';
 
 //utility
-include_once	'includes/util_functions.php';
+include_once	'includes/frame-util_functions.php';
 
 /*
     Sidebar
 */
-include_once    'includes/sidebar.php';
-include_once    'includes/enqueue.php';
+include_once    'includes/frame-sidebar.php';
+
+/*
+    Enqueue
+*/
+include_once    'includes/frame-enqueue.php';
+
+/*
+    Nav Menu
+*/
+include_once    'includes/frame-menu.php';
+
+/*
+    Blocks
+*/
+include_once    'includes/frame-blocks.php';
 
 
 /*

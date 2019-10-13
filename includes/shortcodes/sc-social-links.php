@@ -4,11 +4,13 @@ function social_links_func( $atts ) {
     $a = shortcode_atts( array(
         'show' => 'all',
     ), $atts );
-    
-    $social = get_field('social','option');
-    if(!empty($social)){
-        $social = $social['social_media_account'];
-    }
+
+    $socialIconMap = [
+        'facebook'  => '<i class="fab fa-facebook-f"></i>',
+        'instagram' => '<i class="fab fa-instagram"></i>',
+        'youtube'   => '<i class="fab fa-youtube"></i>' 
+    ];
+    $social = get_field('social_media','option');
 
     //var_dump($social);
     ob_start();
@@ -16,10 +18,9 @@ function social_links_func( $atts ) {
     ?>
         <div class="social-links">
             <?php
-                $index = 3;
                 foreach($social as $soc){
             ?>
-                <a href="<?php echo $soc['link']['url'] ?>" class="a-delay-<?php echo $index++; ?> a-fadeIn a-up"><i class="<?php echo $soc['icon'] ?>"></i></a>
+                <a target="_blank" href="<?php echo $soc['profile_url'] ?>"><?php echo $socialIconMap[$soc['social_media_channel']]?></a>
             <?php }?>
         </div>
     <?php

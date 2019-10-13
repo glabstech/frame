@@ -1,0 +1,40 @@
+.owl-carousel.owl-partners{
+    .owl-stage-outer{
+        .owl-stage{
+            .owl-item{
+                img{
+                    height: 50px;
+                    width:auto;
+                    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+                    filter: grayscale(100%);
+                    opacity:0.8;
+                }
+                &:hover{
+                    img{
+                        -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+                        filter: grayscale(0%); 
+                        opacity:1;
+                    }
+                }
+            }
+        }
+    }
+    .owl-nav{
+        display: block !important;
+        width: 110%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        button{
+            font-size: 56px;
+            font-weight: bold;
+            line-height:56px;
+
+            &.owl-next{
+                float:right;
+            }
+        }
+    }
+}

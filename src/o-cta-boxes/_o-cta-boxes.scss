@@ -1,0 +1,331 @@
+.cta-boxes{
+    &.cta-boxes-1,
+    &.cta-boxes-3{
+        .cta-boxes-inner{
+            margin-top:60px;
+            -ms-flex-wrap: wrap;
+            display: flex;
+            flex-wrap: wrap;
+            padding:0 100px;
+
+            
+            .cta-box{
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+                background:$secondary-color;
+                padding:60px;
+                position:relative;
+
+                .cta-box__icon{
+                    margin-bottom:30px;
+                }
+
+                .cta-box__subTitle{
+                    color:white;
+                    font-size:24px;
+                    font-family:'Bebas Neue Book';
+                    font-weight:bold;
+                    letter-spacing: 0.22em;
+                    transform: scaleY(1.25);
+                    -webkit-transform: scaleY(1.25);
+                    -moz-transform: scaleY(1.25);
+                    -ms-transform: scaleY(1.25);
+                    -o-transform: scaleY(1.25);
+                    margin-top:10px;
+                }
+                .cta-box__title{
+                    color:white;
+                    font-size:34px;
+                    line-height:34px;
+                    font-family:'Bebas Neue';
+                    letter-spacing: 0.18em;
+                    transform: scaleY(1.35);
+                    -webkit-transform: scaleY(1.35);
+                    -moz-transform: scaleY(1.35);
+                    -ms-transform: scaleY(1.35);
+                    -o-transform: scaleY(1.35);
+                    margin:5px 0 25px 0 ;
+                }
+                .cta-box__description{
+                    color:white;
+                    margin-bottom:20px;
+                }
+
+                .btn.btn-primary{
+                    border:1px solid $primary-color;
+                    &:hover{
+                        border-color:white;
+                    }
+                }
+
+                .cta-link{
+                    color:white;
+                    font-size:15px;
+                    font-family:'Bebas Neue';
+                    font-weight:bold;
+                    letter-spacing: 0.1em;
+                    text-transform:uppercase;
+                    display:block;
+                    margin-top:15px;
+                }
+
+                /* active state */
+                &.active{
+                    position:relative;
+                    z-index:10;
+
+                    .cta-box__icon,
+                    .cta-box__subTitle,
+                    .cta-box__title,
+                    .cta-box__description,
+                    .btn.btn-primary,
+                    .cta-link{
+                        position:relative;
+                    }
+
+                    &:before{
+                        content:'';
+                        width:105%;
+                        height:110%;
+                        background:$primary-color;
+                        display:inline-block;
+                        position:absolute;
+                        left:50%;
+                        top:50%;
+                        transform:translate(-50%,-50%);
+                        background:$primary-color;
+                        
+                    }
+                    .btn.btn-primary{
+                        border:1px solid white;
+                        &:hover{
+                            border-color:$secondary-color;
+                        }
+                    }
+
+                    &:first-child{
+                        box-shadow: 50px 50px 100px rgba(0,0,0,0.3);
+                    }
+                    &:last-child{
+                            box-shadow: -50px 50px 100px rgba(0,0,0,0.3);
+                    }
+                }
+            }
+        }
+    }
+
+    /* CTA BOX Layout #2 */
+    &.cta-boxes-2{
+        margin-top:60px;
+        clear:both;
+        overflow:hidden;
+        .cta-boxes-inner{
+            margin-top:80px;
+        }
+        .cta-box{
+            display:inline-block;
+            width:20%;
+            float:left;
+            text-align:center;
+            padding:5px;
+
+            .cta-box-inner{
+                border:1px solid #e0e0e0;
+                padding:30px;
+                border-radius:3px 3px 0 0;
+                min-height:300px;
+                background:white;
+
+            }
+            .cta-box__icon{
+                &.hover{
+                    display:none;
+                }
+            }
+            .cta-box__title{
+                font-family:$font-title;
+                font-size:26px;
+                line-height:28px;
+                letter-spacing:0.15em;
+                margin:15px 0;
+            }
+            .cta-box__description{
+                font-size:16px;
+                line-height:20px;
+            }
+            .btn{
+                display:none;
+            }
+
+            position:relative;
+            &:before{
+                content:'';
+                height:10px;
+                display:inline-block;
+                background:$primary-color;
+                position:absolute;
+                left:5px;
+                right:5px;
+                bottom:0; 
+                
+            }
+            &.cta-box-red{
+                &:before{
+                    background:#d64d4d;
+                }
+            }
+            &.cta-box-green{
+                &:before{
+                    background:#5bba4a;
+                }
+            }
+            &.cta-box-blue{
+                &:before{
+                    background:#6683d3;
+                }
+            }
+            &.cta-box-purple{
+                &:before{
+                    background:#a546d1;
+                }
+            }
+
+            //active
+            &.active{
+                .cta-box__icon{ display:none; }
+                .cta-box__icon.hover{ display:initial;}
+                
+                position:relative;
+
+
+                &:before{
+                    content:'';
+                    width:120%;
+                    height:120%;
+                    background:$primary-color; 
+                    display:inline-block;
+                    z-index:1;
+                    position:absolute;
+                    left:50%;
+                    top:50%;   
+                    transform:translate(-50%,-50%);
+                }
+                .cta-box__title,
+                .cta-box__description,
+                .cta-box__icon.hover{
+                    color:white;
+                    position:relative;
+                    z-index:1;
+                }
+
+                .btn{
+                    display:initial;
+                    z-index:1;
+                    position:absolute;
+                    left:15px;
+                    right:15px;
+                    bottom:15px;
+                    background:none;
+                    border:1px solid white;
+                    // transform:translateX(-50%);
+                    letter-spacing:0px;
+                }
+
+                &.cta-box-red{
+                    &:before{
+                        background:#d64d4d;
+                    }
+                }
+                &.cta-box-green{
+                    &:before{
+                        background:#5bba4a;
+                    }
+                }
+                &.cta-box-blue{
+                    &:before{
+                        background:#6683d3;
+                    }
+                }
+                &.cta-box-purple{
+                    &:before{
+                        background:#a546d1;
+                    }
+                }
+            }
+        }
+    }
+
+    &.cta-boxes-3{
+        .cta-box__description{
+            display:initial !important;
+            .comp-title-group{
+                margin-top:50px;
+                margin-bottom:25px;
+                label{
+                    margin:0;
+                }
+            }
+        }
+        .cta-box{
+            padding-top:200px !important;
+            padding-bottom:100px !important;
+            .cta-box__subTitle{
+                font-size:18px !important;
+                letter-spacing:0.3em !important;
+            }
+            .cta-box__title{
+                letter-spacing:0.3em !important;
+            }
+            .cta-box__subTitle,
+            .cta-box__title,
+            .cta-box__description{
+                color:#343434 !important;
+            }
+            .cta-box__subTitle,
+            .cta-box__title,
+            .cta-box__description,.btn{
+                position:relative;
+                z-index:1;
+            }
+            .btn{
+                background:white;
+                border-color:$primary-color;
+                color:$primary-color;
+            }
+            &:before{
+                background-color:white;
+                content:'';
+                display:inline-block;
+                position:absolute;
+                left:0;
+                top:0;
+                z-index:0;
+                width:100%;
+                height:100%;
+                opacity:0.8;
+
+            }
+            &.active{
+                margin-top:-55px;
+                margin-bottom:55px;
+                &:before{
+                    opacity:0.9;
+                    background-color:#343434 !important;
+                    width:100.2% !important;
+                    height:100.2% !important;
+                }
+                .cta-box__subTitle,
+                .cta-box__title,
+                .cta-box__description{
+                    color:white !important;
+                }
+                .btn{
+                    border-color:$primary-color !important;
+                    background:$primary-color !important;
+                    color:white !important;
+                }
+            }
+        }
+    }
+}

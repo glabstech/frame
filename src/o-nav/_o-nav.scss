@@ -1,0 +1,16 @@
+.navbar{
+    margin-top:5px;
+    .navbar-nav{
+        .nav-link{
+            font-size:16px;
+            text-transform:uppercase;
+            font-weight:600;
+            color:$text-color;
+            padding:18px 10px 0 10px;
+            line-height:16px;
+            &:hover{
+                color:$primary-color;
+            }
+        }
+    }
+}

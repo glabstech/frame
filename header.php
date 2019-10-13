@@ -19,13 +19,10 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script> -->
 
- 	<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300,400,500,600,700,800,900" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-
 
 	<!-- favicon -->
-	<link rel="shortcut icon" href="<?php echo _value_(get_field('favicon','option')) ?>">
-	<link rel="icon" href="<?php echo _value_(get_field('favicon','option')) ?>">
+	<link rel="shortcut icon" href="<?php echo _value_(get_field('header','option')['favicon']) ?>">
+	<link rel="icon" href="<?php echo _value_(get_field('header','option')['favicon']) ?>">
 
     <?php wp_head(); ?>
 
@@ -33,70 +30,59 @@
 
 <body <?php body_class(); ?>>
 
+<?php
+	$header = (object)(get_field('header','option'));
+?>
+<!-- Mainmenu-Area -->
+<div class="mainmenu">
+        <div class="container">
+            <div class="row">
+                <div class="col navbar-top-item d-none d-lg-block">
 
-<!--==========================
-Header
-============================-->
-<header id="header">
-	<div class="container-fluid top-logo-m">
+                    <div class="wrapper float-right float-left-content">
+                        <div class="phone-top mr-4 mt-2">
+                            Need Assistance? Call <a href="tel:+61893009665">+61 8 9300 96650</a>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-primary float-right" href="#">BOOK A FREE CONSULTATION <span>»</span></button>
+                    </div>
 
-		<div id="logo" class="pull-left">
-			<a href="<?php echo get_home_url(); ?>">
-				<?php 
-					$_field = (get_field('header_options','option')); 
-				?>
-				<img class="normal-logo" src="<?php echo $_field['logo_secondary']; ?>" alt="cdc-logo" title="" />
-				<img class="fixed-logo" src="<?php echo $_field['logo_default']; ?>" alt="cdc-logo-hover" title="" />
-			</a>
-		</div>
+                </div>
+            </div>
+            <div class="row">
 
-		<nav id="nav-menu-container">
-		<?php 
-			wp_nav_menu( array(
-				'theme_location'  => 'primary',
-				'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
-				'container'       => '',
-				'container_class' => '',
-				'container_id'    => '',
-				'menu_class'      => 'nav-menu',
-				'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-				'walker'          => new WP_Bootstrap_Navwalker(),
-			) );
-		?>
 
-			<!-- <ul class="nav-menu">
-				<li class="menu-has-children"><a href="">Services</a>
-					<ul>
-						<li><a href="#">Drop Down 1</a></li>
-						<li class="menu-has-children"><a href="#">Drop Down 2</a>
-							<ul>
-								<li><a href="#">Deep Drop Down 1</a></li>
-								<li><a href="#">Deep Drop Down 2</a></li>
-								<li><a href="#">Deep Drop Down 3</a></li>
-								<li><a href="#">Deep Drop Down 4</a></li>
-								<li><a href="#">Deep Drop Down 5</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Drop Down 3</a></li>
-						<li><a href="#">Drop Down 4</a></li>
-						<li><a href="#">Drop Down 5</a></li>
-					</ul>
-				</li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#portfolio">Safety</a></li>
-				<li><a href="#team">Projects</a></li>
-				<li><a href="#services">Gallery</a></li>
-				<li><a href="#team">News</a></li>
-				<li><a href="#contact">Contact Us</a></li>
-			</ul> -->
-		</nav><!-- #nav-menu-container -->
-		<div class="enquire-section">
-		<div class="support-number"><a target="<?php echo $_field['contact']['target']; ?>" href="<?php echo $_field['contact']['url']; ?>"><i class="fa fa-phone" aria-hidden="true"></i><span><?php echo $_field['contact']['title']; ?></span></a></div>
-			<a href="<?php echo $_field['cta']['url']; ?>" <?php if($_field['cta']['target']){ echo 'target="'.$_field['cta']['target'].'"';}?> class="enquire-btn"><span><?php echo $_field['cta']['title'] ?></span></a>
-				
-		</div>
-	</div>
-</header><!-- #header -->
+                <nav id="main-nav" class="col navbar navbar-expand-lg">
+                    
+                    <a class="navbar-brand offset-top normal" href="/"><img src="<?php echo $header->logo ?>"></a>
+                    <!-- <a class="navbar-brand offset-top fixed" href="/"><img src="<?php echo $_field['logo_default']; ?>"></a> -->
+                    
+                    
+                    <button class="frame-navbar-toggler navbar-toggler" type="button" data-to-toggle="primary-menu-wrapper" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span href="#" class="frame-hamburger d-lg-none d-xl-block"><span></span></span>
+                    </button>
+
+                    <!-- Links -->
+                    <div class="collapse navbar-collapse" id="primary-menu-wrapper">
+                        <?php
+                        wp_nav_menu( array(
+                            'theme_location'  => 'primary',
+                            'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
+                            'container'       => '',
+                            'container_class' => '',
+                            'container_id'    => '',
+                            'menu_class'      => 'navbar-nav ml-auto',
+                            'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                            'walker'          => new WP_Bootstrap_Navwalker(),
+                        ) );
+                        ?>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+	<!-- Mainmenu /-->
+
 
 
     

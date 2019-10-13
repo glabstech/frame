@@ -1,0 +1,77 @@
+.hero{
+    font-family: 'Bebas Neue';
+    // min-height: 820px;
+    // padding-bottom:240px;
+    // padding-top: 240px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+
+    .hero__subtitle{
+        font-size: 40px;
+        letter-spacing: 0.22em;
+        transform: scaleY(1.15);
+        -webkit-transform: scaleY(1.15);
+        -moz-transform: scaleY(1.15);
+        -ms-transform: scaleY(1.15);
+        -o-transform: scaleY(1.15);
+        font-family: 'Bebas Neue Book';
+    }
+
+    .hero__title{
+        font-size: 78px;
+        font-weight: bold;
+        letter-spacing: 0.13em;
+        transform: scaleY(1.2);
+        -webkit-transform: scaleY(1.2);
+        -moz-transform: scaleY(1.2);
+        -ms-transform: scaleY(1.2);
+        -o-transform: scaleY(1.2);
+        margin-bottom: 35px;
+        position: relative;
+
+        &:after{
+            content: '';
+            background: $text-color;
+            height: 1px;
+            width: 165px;
+            display: inline-block;
+            position: absolute;
+            left: 0px;
+            bottom: 5px;
+        }
+
+    }
+    .hero__excerpt{
+        font-family: 'Proxima Nova';
+        font-size: 24px;
+        letter-spacing: 1px;
+        max-width: 420px;
+        line-height: 28px;
+        margin-bottom: 40px;
+    }
+
+    /* HERO CALL */
+    .hero__call{
+        display:inline-block;
+        background:rgba(255,255,255,0.5);
+        padding:10px 15px;
+        vertical-align:top;
+        font-family: 'Proxima Nova';
+        font-size:17px;
+        line-height:25px;
+        max-height:70px;
+        a{
+            display:block;
+            font-weight:bold;
+            color:$primary-color;
+            font-size:26px;
+            letter-spacing:0.1em;
+            font-family: 'Bebas Neue';
+            &:hover{
+                text-decoration:none;
+                color:$secondary-color;
+            }
+        }
+    }
+}

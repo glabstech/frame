@@ -1,9 +1,33 @@
 <?php 
 
 ?>
+<div class="container">
+    <div class="row">
+        <div class="">
+
+
 <h2 class="section-title text-center"><?php echo $fr_component->el_title['text'] ?></h2>
-    <div class="cta-boxes-inner">    
-        <div class="cta-box cta-box-red">
+    <div class="cta-boxes-inner cta-boxes-inner-count-<?php echo count($fr_component->boxes) ?>"> 
+        <?php
+            $count = 0;
+            foreach($fr_component->boxes as $box){
+    
+                $activeClass = (($count>=count($fr_component->boxes)-1))?"active":"";
+                // var_dump($box);
+                ?>
+                    <div class="cta-box cta-box-<?php echo $box['color_theme'] ?>">
+                        <div class="cta-box-inner">
+                            <img class="cta-box__icon" src="<?php echo $box['icon'] ?>">
+                            <img class="cta-box__icon hover" src="<?php echo $box['icon_hover'] ?>">
+                            <div class="cta-box__title"><?php echo $box['el_title']['text'] ?></div>
+                            <div class="cta-box__description"><?php echo $box['excerpt'] ?></div>
+                            <a class="btn btn-primary" href="<?php echo $box['main_cta_button_el_button']['link'] ?>" target="<?php echo $box['main_cta_button_el_button']['target'] ?>"><?php echo $box['main_cta_button_el_button']['text'] ?> <span>»</span></a>
+                        </div>
+                    </div>
+                <?php
+            }
+        ?>   
+        <!-- <div class="cta-box cta-box-red">
             <div class="cta-box-inner">
                 <img class="cta-box__icon" src="/wp-content/uploads/2019/10/service-business-accounting.png">
                 <img class="cta-box__icon hover" src="/wp-content/uploads/2019/10/service-business-accounting-active.png">
@@ -58,5 +82,11 @@
             </div>
             <a class="btn btn-primary" href="#">Discover More<span>»</span></a>
             </div>
-        </div>
+        </div> -->
+</div>
+
+
+
+</div>
+    </div>
 </div>

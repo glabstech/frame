@@ -16,7 +16,7 @@ add_filter( 'widget_text', 'do_shortcode' );
 
 
 
-//add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-thumbnails' ); 
 
 /* ADD IMAGE THEME SUPPORT */
 //add_image_size( '200x200', 200, 200, true );

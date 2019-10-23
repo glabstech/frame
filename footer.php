@@ -6,6 +6,27 @@
 
 
 <footer id="main-footer" >
+    <section class="global-pre-footer">
+    
+        <?php
+            // include_once('includes/partials/frame-partials.php');
+            // dynamic_sidebar('global-pre-footer');
+            
+            $exclude = get_field('do_not_show_cta','option');
+            $exclude = empty($exclude)?[]:$exclude;
+            $ctaBoxes = get_field('cta_box','option');
+            //var_dump(__DIR__);
+            if(!in_array(get_the_id(),$exclude)){
+                $boxes = get_field('cta_boxes','option')['boxes'];
+                $fr_component['boxes'] = $boxes;
+                $fr_component = (object)$fr_component;
+
+                echo '<div style="margin-bottom:-60px;" class="cta-boxes cta-boxes-'.$ctaBoxes['cta_boxes']['box_style'].'  container">';
+                include(__DIR__.'/includes/partials/cta_boxes/cta_boxes_'.$ctaBoxes['cta_boxes']['box_style'].'.php');
+                echo '</div>';
+            }
+        ?>
+    </section>
     <section class="pre-footer" style="background-color:<?php echo $footer_settings->background_color ?>">
         <!-- dynamic -->
         <div class="container ">

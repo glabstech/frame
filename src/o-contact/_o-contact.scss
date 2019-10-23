@@ -1,0 +1,74 @@
+.component-contact-us{
+    .contact-details{
+        background:#fbf9f7;
+        .contact-details-phone{
+            font-size:24px;
+            font-family:$font-text;
+            font-weight:bold;
+            color:$text-color;
+            i{
+                font-size:18px;
+                transform:rotateZ(90deg);
+                margin-right:10px;
+            }
+        }
+        label{
+            font-size: 15px;
+            text-transform:uppercase;
+            font-weight:700;
+            font-family:$font-text;
+            color:#49545a;
+            margin-top:30px;
+        }
+        p{
+          color:#878787;  
+        }
+    }
+    .social-links{
+        a{
+            i{
+                color:#989898;
+                font-size:18px;
+            }
+            width:35px;
+            height:35px;
+            line-height:35px;
+        }
+    }
+
+
+    .contact-form{
+        .form-row{
+            label{
+                font-size: 15px;
+                text-transform:uppercase;
+                font-weight:700;
+                font-family:$font-text;
+                color:#49545a;
+                margin-top:25px;
+            }
+            .form-control{
+                border-radius:0;
+                font-size:16px;
+                font-family:$font-text;
+                padding: 8px 15px;
+                height:auto;
+                border-color:#d2d2d2;
+            }
+            textarea.form-control{
+                height:160px;
+            }
+        }
+        input[type="submit"]{
+            margin-top:15px;
+            float:right;
+        }
+
+        .wpcf7-validation-errors{
+            margin:0;
+            width:75%;
+            float:left;
+            margin-top:-22px;
+        }
+    }
+}

@@ -26,6 +26,9 @@
                 -ms-transform: scaleY(1.35);
                 -o-transform: scaleY(1.35);
                 float:left;
+                p{
+                    margin:0;
+                }
             }
             .stat-label{
                 font-size:20px;

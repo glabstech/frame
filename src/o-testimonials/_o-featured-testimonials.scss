@@ -82,5 +82,11 @@
             border-bottom:1px solid lighten( $secondary-color, 40% );
             border-right:1px solid lighten( $secondary-color, 40% );
         }
+
+        &.line-title-height-130{
+            &:after{
+                width:130%;
+            }
+        }
     }
 }

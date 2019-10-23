@@ -18,20 +18,17 @@
         <h4 class="section-title-sub text-center"><?php echo $section['el_title']['sub_text'] ?></h4>
 
         <div class="stats-inner">
-            <div class="stat">
-                <div class="stat-figure">55K<sup>+</sup></div>
-                <div class="stat-label">Number of People Helped</div>
-            </div>
-
-            <div class="stat">
-                <div class="stat-figure">9.6</div>
-                <div class="stat-label">Average Workshop Rating Out of 10</div>
-            </div>
-
-            <div class="stat">
-                <div class="stat-figure">90%</div>
-                <div class="stat-label">Clients that Come from Referrals</div>
-            </div>
+            <?php 
+                //var_dump($fr_component);
+                foreach($fr_component as $stat){
+                    ?>
+                        <div class="stat">
+                            <div class="stat-figure"><?php echo $stat['stat'] ?></div>
+                            <div class="stat-label"><?php echo $stat['label']?></div>
+                        </div>
+                    <?php
+                }
+            ?>
 
         </div>
 

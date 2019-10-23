@@ -16,7 +16,7 @@
 .btn-primary{
     background: $btn-primary-color;
     &:hover{
-        background:$btn-primary-hover;
+        background:darken($btn-primary-hover,10%);
     }
 }
 

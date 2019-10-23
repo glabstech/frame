@@ -1,6 +1,15 @@
 <?php
 
-$sections = get_field('section');
+//process header
+$allFields = get_fields();
+if($allFields['enable_title_options']){
+    $titleOption = $allFields['title_option'];
+    
+    include('_header.php');
+} 
+
+//process sections
+$sections = $allFields['section'];//get_field('section');
 
 if(!empty($sections)){
     $i = 0;
@@ -38,6 +47,8 @@ if(!empty($sections)){
             .(!empty($fr_settings->margin['bottom'])?'margin-bottom:'.$fr_settings->margin['bottom'].'px;':'')
             .(!empty($fr_settings->margin['left'])?'margin-left:'.$fr_settings->margin['left'].'px;':'');
 
+            //init zindex
+            $fr_settings->zindex = !empty($fr_settings->zindex)?'z-index:'.$fr_settings->zindex:'';
             //init background
             $fr_settings->background =
             (!empty($fr_settings->background_image)?'background-image:url('.$fr_settings->background_image['url'].');':'').

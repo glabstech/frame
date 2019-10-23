@@ -2,7 +2,7 @@
 
 <main id="main">
 		<?php
-            include_once('includes/partials/partials.php');
+            include_once('includes/partials/frame-partials.php');
 		?>	
 </main>
 

@@ -14,6 +14,11 @@ body{
     padding-top:33px;
 }
 
+.admin-bar{
+    .mainmenu{
+        top:32px;
+    }
+}
 
 h2{
     font-size:45px;
@@ -27,6 +32,14 @@ h2{
     -o-transform: scaleY(1.35);
     margin-top:15px;
     margin-bottom:30px;
+}
+p{
+    margin-bottom:2rem;
+}
+
+main#main{
+    min-height:128px;
+    padding-top:128px;
 }
 
 .section-title{
@@ -67,4 +80,59 @@ h2{
             
         }
     }
+}
+
+.section-content{
+    ul{
+        padding-left:0px;
+        list-style:none;
+        li{
+            font-weight:bold;
+            position:relative;   
+            padding-left:20px; 
+            font-size:20px;
+            display:inline-block;
+            padding-top:10px;
+            padding-bottom:10px;
+            width:100%;
+            a{
+                color:$text-color;
+                text-decoration:underline;
+            }
+            &:before{
+                content:'';
+                width:6px;
+                height:6px;
+                background:$primary-color;
+                position:absolute;
+                display:inline-block;
+                left:0;
+                top:20px;
+                // margin-top:-3px;
+                z-index:1;
+            }
+        }
+    }
+}
+
+
+article{
+    &.main-content{
+        p{
+            font-size:20px;
+        }
+        ol{
+            padding-left:15px;
+        }
+        li{
+            font-size:20px;
+            padding:3px 0;
+        }
+    }
+}
+
+.article-wrapper{
+    margin-top:-100px;
+    position:relative;
+    z-index:1;
 }

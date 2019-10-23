@@ -12,7 +12,8 @@
     .section-content{
         font-size:20px;
         line-height:28px;
-        white-space: pre-line;
+        // white-space: pre-line;
+        white-space: normal;
     }
 
     .image-outer{
@@ -23,6 +24,14 @@
             margin-right:50px;
             position:relative;
             box-shadow: 0px 40px 50px rgba(0,0,0,0.2);
+            background-size:cover;
+            .image-overlay{
+                height: 100%;
+                width: 100%;
+                filter: grayscale(1) contrast(1.8) brightness(1);
+                clip-path: inset(50px calc(35% + 50px) 0 0px);
+                background-size:cover;
+            }
             &:after{
                 content:'';
                 width:2000px;
@@ -37,6 +46,11 @@
                 margin-right:50px;
 
             }
+            &.no-abstract-bg{
+                &:after{
+                    display:none;
+                }
+            }
         }
         &.image-orange{
             .image{
@@ -44,14 +58,50 @@
                     content:'';
                     width:65%;
                     height:100%;
-                    background:$primary-color;
-                    display:inline-block;
+                    background:#ff8400;//$primary-color;
+                    display:inline-block; 
                     position:absolute;
                     left:-50px;
-                    top:50px;
+                    bottom:-50px;
                     z-index:1;
                     opacity:0.7; 
                 }
+                &.overlay-70{
+                    &:before{
+                        height:70%;
+                    }
+                    .image-overlay{
+                        clip-path: inset(calc(30% + 50px) calc(35% + 50px) 0 0px);
+                    }
+                }
+            }
+            &.image-green{
+                .image{
+                    &:before{
+                        background:#00b718;    
+                    }
+                }    
+            }
+            &.image-red{
+                .image{
+                    &:before{
+                        background:#f60000;    
+                    }
+                }    
+            }
+            &.image-purple{
+                .image{
+                    &:before{
+                        background:$color-purple;    
+                    }
+                }    
+            }
+            &.image-blue{
+                .image{
+                    &:before{
+                        background:#264bb3;    
+                    }
+                }    
             }
         }
 

@@ -11,8 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        <?php wp_title(); ?>
-        Profacc - <?php echo get_the_title() ?>
+        <?php wp_title(''); ?>
     </title>
 
     <!-- <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
@@ -44,7 +43,7 @@
                         <div class="phone-top mr-4 mt-2">
                             Need Assistance? Call <a href="tel:+61893009665">+61 8 9300 96650</a>
                         </div>
-                        <a class="btn btn-sm btn-primary float-right" href="/contact-us">BOOK A FREE CONSULTATION <span>»</span></a>
+                        <button type="button" class="btn btn-sm btn-primary float-right" href="#">BOOK A FREE CONSULTATION <span>»</span></button>
                     </div>
 
                 </div>

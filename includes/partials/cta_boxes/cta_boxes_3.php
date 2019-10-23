@@ -3,23 +3,25 @@
 ?>
 
 <div class="cta-boxes-inner">
-        <div class="cta-box" data-image="/wp-content/uploads/2019/10/cta-3-2.jpg" style="background-image:url(/wp-content/uploads/2019/10/cta-3-2.jpg)">
-            <div class="cta-box__subTitle text-center">Need Help?</div>
-            <div class="cta-box__title text-center">GET In Touch</div>
-            <div class="cta-box__description">
-                
-            </div>
-            <a class="btn btn-primary btn-block" href="#">Send Us an Email<span>»</span></a>
-        </div>
-        <div class="cta-box active" data-image="/wp-content/uploads/2019/10/cta-3-2.jpg" style="background-image:url(/wp-content/uploads/2019/10/cta-3-2.jpg)">
-            <div class="cta-box__subTitle text-center">Turn Perception into reality.</div>
-            <div class="cta-box__title text-center">Work Smarter.</div>
-            <div class="cta-box__description text-center"   >
-                <div class="comp-title-group">
-                    <label>Need Assistance?</label>
-                    <a href="tel:61893009665"><span>CALL</span> +61 8 9300 9665</a>
+    <?php
+        //var_dump($fr_component->boxes);
+        $count = 0;
+        foreach($fr_component->boxes as $box){
+            $activeClass = (($count>=count($fr_component->boxes)-1))?"active":"";
+            ?>
+                <div class="cta-box <?php echo $activeClass ?>" data-image="<?php echo $box['background'] ?>" style="background-image:url(<?php echo $box['background'] ?>)">
+                    <div class="cta-box-inner">
+                        <div class="cta-box__subTitle text-center"><?php echo $box['el_title']['sub_text'] ?></div>
+                        <div class="cta-box__title text-center"><?php echo $box['el_title']['text'] ?></div>
+                        <div class="cta-box__description">
+                            <?php echo $box['excerpt'] ?>
+                        </div>
+                        <a target="<?php echo $box['main_cta_button_el_button']['target'] ?>" class="btn btn-primary btn-block" href="<?php echo $box['main_cta_button_el_button']['link'] ?>"><?php echo $box['main_cta_button_el_button']['text'] ?> <span>»</span></a>
+                    </div>
                 </div>
-            </div>
-            <a class="btn btn-primary btn-block" href="#">Book a free consulation<span>»</span></a>
-        </div>
+            <?php
+            $count++;
+        }
+    ?>
+        
 </div>

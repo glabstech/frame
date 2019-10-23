@@ -1,0 +1,39 @@
+.component-team-outer{
+    overflow:hidden; 
+    position:relative;
+    .section-title{
+        margin-bottom:10px;
+    }
+    .section-title-sub{
+        font-size:20px;
+    }
+    .team-boxes{
+        overflow:auto;
+        margin-top:50px;
+        .team-box{
+            width:20%;
+            float:left;
+            padding:0 8px;
+            .team-box__photo{
+                background-size:cover;
+                height:250px;
+            }
+            .team-box__name{
+                font-family: $font-title;
+                font-size: 24px;
+                line-height: 28px;
+                letter-spacing: 0.15em;
+                margin: 15px 0 0;
+            }
+            .team-box__position{
+                font-size:18px;
+                font-weight:600;
+                color:$primary-color;
+            }
+            .team-box__achievements{
+                font-size:16px;
+                font-style:italic;
+            }
+        }
+    }
+}

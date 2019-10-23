@@ -1,39 +1,48 @@
 <?php 
-
-
-
+    $fields = $section['comp_image_text'];
+    //var_dump($fields['overlay_color']);
 ?>
-<div class="container-fluid component-image-text-outer" style=""><div class="row">
+<div class="container-fluid component-image-text-outer"
+    style=" 
+                <?php echo $fr_settings->padding ?>
+                <?php echo $fr_settings->margin  ?>
+                <?php echo $fr_settings->background ?>
+                <?php echo $fr_settings->zindex ?>
+            "
+><div class="row">
+
+    <?php if(!empty($fr_settings->enable_background_title)){?>
     <div class="background-title"><?php echo $section['el_title']['text'] ?></div>
+    <?php } ?>
+
 <div <?php echo $fr_settings->id ?>
     class="component-image-text <?php echo $fr_settings->class ?> <?php echo ($fr_settings->layout_type === 'boxed')?'container':'container-fluid' ?>"
-    data-section-index="<?php echo $fr_settings->index ?>" 
-    style=" 
-            <?php echo $fr_settings->padding ?>
-            <?php echo $fr_settings->margin  ?>
-            <?php echo $fr_settings->background ?>
-        "
+    data-section-index="<?php echo $fr_settings->index ?>"
             
     >
     
     <div class="container-fluid">
             <div class="row">
-                <div class="col image-outer image-orange">
+                <div class="col image-outer image-orange image-<?php echo $fields['overlay_color'] ?>">
+                    <?php if(!empty($fr_settings->enable_line_title)){?>
                     <div class="line-title"><?php echo $section['el_title']['text'] ?></div>
-                    <div class="image" style="background-image:url(/wp-content/uploads/2019/10/whychooseus.jpg)"></div>
+                    <?php }
+                        $abstractBackgroundClass = !empty($fr_settings->show_abstract_background)?'':'no-abstract-bg';
+                        $imageHeight = !empty($fields['image'])?'height: '.$fields['image_height'].'px;':'';
+                        $orangeBGHeight = !empty($fields['overlay_height'])?'overlay-'.$fields['overlay_height']:'overlay-100';
+                    ?>
+                    <div class="image <?php echo $abstractBackgroundClass.' '.$orangeBGHeight ?>" style="background-image:url(<?php echo $fields['image'] ?>); <?php echo $imageHeight ?>">
+                        <div class="image-overlay" style="background-image:url(<?php echo $fields['image'] ?>);"></div>
+                    </div>
                 </div>
                 <div class="col">
                     
                     <h2 class="section-title"><?php echo $section['el_title']['text'] ?></h2>
-                    <div class="section-content">
-                        Strategic has relationship with both the major banks and non-bank specialist lenders. We can secure home loans for your frist home or new build, renovations or extensions, and we can refinance and restructure your mortgage.
-
-                        We make it simple to get an outstanding deal on your home loan. We can match or beat any rate you can get from the bank direct - saving you time and money.
-
-                        We make it simple to get an outstanding deal on your home loan. We can match or beat any rate you can get from the bank direct - saving you time and money.
-                    </div>
+                    <div class="section-content"><?php echo $fields['text'] ?></div>
                     <br><br>
-                    <a href="#" class="btn btn-primary">Discover More About Us <span>»</span></a>
+                    <?php if(!empty($fields['cta'])){?>
+                    <a href="<?php echo $fields['cta']['url'] ?>" class="btn btn-primary"><?php echo $fields['cta']['title'] ?> <span>»</span></a>
+                    <?php } ?>
                 </div>
             </div>
             

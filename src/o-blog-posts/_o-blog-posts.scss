@@ -97,12 +97,12 @@
                     }
                 }
                 .btn{
-                    display:initial;
-                    background:none;
-                    border:1px solid white;
-                    color:white;
-                    position:absolute;
-                    bottom:50px;
+                    display: inline-block;
+                    background: none;
+                    border: 1px solid white;
+                    color: white;
+                    position: relative;
+                    margin-top: 30px;
                 }
             }
         }

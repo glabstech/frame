@@ -1,5 +1,6 @@
 <?php 
-
+    $fields = $section['featured_testimonial'];
+    //var_dump(get_field('image',$fields['featured']->ID));
 ?>
 
 <div <?php echo $fr_settings->id ?>
@@ -16,16 +17,15 @@
         <div class="row">
             <div class="col-xs-12">
                     <div class="inner">
-                        <div class="line-title">Testimonial</div>
-                        <div class="photo" style="background-image: url(http://profacc.local/wp-content/uploads/2019/10/gray-testimonila-sampler.jpg)"></div>  
+                        <?php
+                            $lineTitleHeight = !empty( $fields['line_title_height'] )?'line-title-height-'.$fields['line_title_height']:'';
+                        ?>
+                        <div class="line-title <?php echo $lineTitleHeight ?>">Testimonial</div>
+                        <div class="photo" style="background-image: url(<?php echo get_field('image',$fields['featured']->ID) ?>)"></div>  
                         <div class="content">
-                            <div class="statement">
-                                John and Monica have supported EY's efforts to develop world-class business
-                                development and negotiation skills in our professionals over the past 4 years and have become
-                                trusted extensions to our EY team across Asia Pacific    
-                            </div>
+                            <div class="statement"><?php echo $fields['featured']->post_content ?></div>
                             <div class="person">
-                                - Jane Doe, TheCompany
+                                - <?php echo $fields['featured']->post_title.', '.get_field('company',$fields['featured']->ID) ?>
                             </div>
                         </div>
                     </div>

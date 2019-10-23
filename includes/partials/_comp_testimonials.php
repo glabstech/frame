@@ -24,38 +24,35 @@
     <div class="row">
         <div class="col">
             <div class="testimonials-boxes">
-                <div class="testimonial-box">
-                    <div class="testimonial-box__photo" style="background-image: url(/wp-content/uploads/2019/10/gray-testimonila-sampler.jpg)"></div>
-                    <div class="testimonial-box__statement">
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                    </div>
-                    <div class="testimonial-box__person">
-                        <label>Jane Doe</label>
-                        <span>House Developer</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-box active">
-                    <div class="testimonial-box__photo" style="background-image: url(/wp-content/uploads/2019/10/gray-testimonila-sampler.jpg)"></div>
-                    <div class="testimonial-box__statement">
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                    </div>
-                    <div class="testimonial-box__person">
-                        <label>Jane Doe</label>
-                        <span>House Developer</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-box">
-                    <div class="testimonial-box__photo" style="background-image: url(/wp-content/uploads/2019/10/gray-testimonila-sampler.jpg)"></div>
-                    <div class="testimonial-box__statement">
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                    </div>
-                    <div class="testimonial-box__person">
-                        <label>Jane Doe</label>
-                        <span>House Developer</span>
-                    </div>
-                </div>
+                <?php
+                    //testimonials    
+                    $query = new WP_Query( array(
+                        'post_type' => 'testimonials',
+                        'posts_per_page' => 3
+                    ) );
+                    $count = 0;
+                    foreach($query->posts as $_post){
+                        $image = get_field('image',$_post->ID);
+                        $position = get_field('position',$_post->ID);
+                        $activeClass = "";
+                        if($count == 1) $activeClass = "active";
+                        //var_dump($image);
+                        ?>
+                            <div class="testimonial-box <?php echo $activeClass ?>">
+                                <div class="testimonial-box__photo" style="background-image: url(<?php echo $image ?>)"></div>
+                                <div class="testimonial-box__statement">
+                                    <?php echo $_post->post_content ?>
+                                </div>
+                                <div class="testimonial-box__person">
+                                    <label><?php echo $_post->post_title ?></label>
+                                    <span><?php echo $position ?></span>
+                                </div>
+                            </div>
+                        <?php
+                        $count++;
+                    }
+                ?>
+                
 
             </div>
         </div>
@@ -63,7 +60,7 @@
     
     <div class="row">
         <div class="col text-center mt-5">
-            <a href="#" class="btn btn-primary">View More Testimonials <span>»</span></a>
+            <a href="/testimonials" class="btn btn-primary">View More Testimonials <span>»</span></a>
         </div>
     </div>
     

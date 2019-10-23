@@ -34,6 +34,18 @@
             .testimonial-box__statement{
                 font-family:$font-text;
                 font-size:18px;
+                p{
+                    position:relative;
+                    &:before{
+                        content:'"';
+                        position:absolute;
+                        left:-10px;
+                    }
+                    &:after{
+                        content:' "';
+                       
+                    }
+                }
             }
             .testimonial-box__person{
                 position:relative;

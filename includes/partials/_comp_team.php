@@ -29,16 +29,18 @@
                     //testimonials    
                     $query = new WP_Query( array(
                         'post_type' => 'team',
-                        'posts_per_page' => 5
+                        'posts_per_page' => -1,
+                        'orderby'   => 'meta_value',
+                        'order' => 'DESC',
                     ) );
                     $count = 0;
                     foreach($query->posts as $_post){
                         $image = get_field('photo',$_post->ID);
                         $position = get_field('position',$_post->ID);
                         $achievements = get_field('achievements',$_post->ID);
-   
+                        
                         ?>
-                            <div class="team-box">
+                            <div class="team-box team-id-<?php echo $_post->ID ?> ">
                                 <div class="team-box__photo" style="background-image: url(<?php echo $image ?>)"></div>
                                 <div class="team-box__name">
                                     <?php echo $_post->post_title ?>
@@ -52,6 +54,9 @@
                             </div>
                         <?php
                         $count++;
+                        if($_post->ID == 554 ){
+                            echo '<br><br>';
+                        }
                     }
                 ?>
                 

@@ -72,7 +72,10 @@
                 </div> -->
             </div>
             <div class="blog-posts-view-all text-center">
-                <a href="#"class="btn btn-primary">View More Case Studies<span>»</span></a>
+                <?php
+            
+                ?>
+                <a href="/news"class="btn btn-primary">View More<span>»</span></a>
             </div>
         </div>
     </div>

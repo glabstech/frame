@@ -14,3 +14,16 @@ $text-color: $secondary-color;
 
 $font-title: 'Bebas Neue';
 $font-text: 'Proxima Nova';
+
+$zindex-dropdown:          1000 !default;
+$zindex-sticky:            1020 !default;
+$zindex-fixed:             1030 !default;
+$zindex-modal-backdrop:    1040 !default;
+$zindex-modal:             1050 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+
+$screen-xl: 1200px;
+$screen-lg: 992px;
+$screen-md:768px;
+$screen-sm: 576px;

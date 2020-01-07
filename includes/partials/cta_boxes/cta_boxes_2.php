@@ -11,15 +11,15 @@
         <?php
             $count = 0;
             foreach($fr_component->boxes as $box){
-    
+                $titleClass = "";
                 $activeClass = (($count>=count($fr_component->boxes)-1))?"active":"";
-                // var_dump($box);
                 ?>
                     <div class="cta-box cta-box-<?php echo $box['color_theme'] ?>">
                         <div class="cta-box-inner">
                             <img class="cta-box__icon" src="<?php echo $box['icon'] ?>">
                             <img class="cta-box__icon hover" src="<?php echo $box['icon_hover'] ?>">
-                            <div class="cta-box__title"><?php echo $box['el_title']['text'] ?></div>
+                            <?php if((int)strlen($box['el_title']['text']) > 28 ) $titleClass = "title-sm";?>
+                            <div class="cta-box__title <?php echo $titleClass ?>"><?php echo $box['el_title']['text'] ?></div>
                             <div class="cta-box__description"><?php echo $box['excerpt'] ?></div>
                             <a class="btn btn-primary" href="<?php echo $box['main_cta_button_el_button']['link'] ?>" target="<?php echo $box['main_cta_button_el_button']['target'] ?>"><?php echo $box['main_cta_button_el_button']['text'] ?> <span>»</span></a>
                         </div>

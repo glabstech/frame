@@ -29,6 +29,8 @@ if(!empty($sections)){
             $fr_settings = $section['settings'];
             $fr_settings['index'] = $sectionIndex;
             $fr_settings['background'] = '';
+            $fr_settings['background_mobile']='';
+            $fr_settings['main_background'] = '';
             $fr_settings = (object)$fr_settings;
 
             $fr_settings->id = !empty($fr_settings->id)?'id="'.$fr_settings->id.'"':'';
@@ -53,7 +55,15 @@ if(!empty($sections)){
             $fr_settings->background =
             (!empty($fr_settings->background_image)?'background-image:url('.$fr_settings->background_image['url'].');':'').
             (!empty($fr_settings->background_color)?'background-color:'.$fr_settings->background_color.';':'');
+
+            $fr_settings->background_mobile =
+            (!empty($fr_settings->background_image)?'data-background-mobile="'.$fr_settings->background_image_mobile['url'].'";':'');
+
+            $fr_settings->main_background =
+            (!empty($fr_settings->background_image)?'data-background="'.$fr_settings->background_image['url'].'";':'');
+
             
+
 
             include('_'.$type.'.php');
             

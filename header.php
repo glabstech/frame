@@ -59,7 +59,7 @@
                     
                     
                     <button class="frame-navbar-toggler navbar-toggler" type="button" data-to-toggle="primary-menu-wrapper" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span href="#" class="frame-hamburger d-lg-none d-xl-block"><span></span></span>
+                        <span href="#" class="frame-hamburger d-lg-none d-xl-block"></span>
                     </button>
 
                     <!-- Links -->
@@ -78,6 +78,8 @@
                         ?>
 
                     </div>
+
+                    <div class="mobile-body-overlay"></div>
                 </nav>
             </div>
         </div>

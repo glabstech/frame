@@ -11,12 +11,14 @@
             <?php echo $fr_settings->margin  ?>
             <?php echo $fr_settings->background ?>
         "
+    <?php echo $fr_settings->background_mobile ?>
+    <?php echo $fr_settings->main_background ?>
             
     >
     
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-sm-12">
+            <div class="col-12">
                 <h3 class="hero__subtitle"><?php echo $fr_component->sub_title?></h3>
                 <h1 class="hero__title"><?php echo $fr_component->title ?></h1>
                 <div class="hero__excerpt"><?php echo $fr_component->excerpt ?></div>

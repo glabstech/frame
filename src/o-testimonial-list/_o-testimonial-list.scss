@@ -1,0 +1,38 @@
+.testimonial-list{
+    .testimonial-list-thumb{
+        width:150px;
+        height:150px;
+        float:left;
+        clear:both;
+        background-size:cover;
+        background-repeat:no-repeat;
+        margin-right:50px;
+    }
+    article{
+        margin-bottom:30px;
+        clear:both;
+        min-height:150px;
+    }
+    .testimonial-list-details{
+        .testimonial-list-quote{
+            position:relative;
+            padding-left:15px;
+            p{
+                margin-bottom:5px;
+                font-size:18px;
+            }
+        }
+        .testimonial-list-title{
+            font-family: 'Bebas Neue';
+            font-size:22px;
+            padding-left:15px;
+            line-height:22px;
+            margin-top:15px;
+            .position{
+                display:block;
+                font-size:16px;
+                font-family:$font-text;
+            }
+        }
+    }
+}

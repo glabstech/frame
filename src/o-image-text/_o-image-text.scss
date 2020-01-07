@@ -1,13 +1,20 @@
 .component-image-text-outer{
     position:relative;
     overflow:hidden;
-
+    @media screen and (max-width:$screen-lg - 1){
+        padding-top:50px !important;
+        padding-bottom:50px !important;
+    }
 }
 .component-image-text{
     position:relative;
     .section-title{
         font-size:50px;
         margin-top:65px;
+        @media screen and (max-width:$screen-lg - 1){
+            font-size:44px;
+            line-height: 46px;
+        }
     }
     .section-content{
         font-size:20px;
@@ -50,6 +57,9 @@
                 &:after{
                     display:none;
                 }
+            }
+            @media screen and (max-width:$screen-lg - 1){
+                width:500px;
             }
         }
         &.image-orange{
@@ -139,6 +149,36 @@
             }
         }
     }
+
+    @media screen and (max-width:$screen-lg - 1){
+        .image-outer{
+            
+            .image{
+                margin:0 auto;
+                width:600px;
+                &:after{
+                    display:none;
+                }
+            }
+        }
+        .image-outer+.col{
+            margin-top:50px;
+        }
+        .line-title{
+            display:none !important;
+        }
+        .btn.btn-primary{
+            font-size:24px;
+        }
+    }
+    @media screen and (max-width:$screen-md - 1){
+        padding-bottom:50px;
+        .image-outer{
+            .image{
+                width:540px;
+            }
+        }   
+    }
 }
 
 .background-title{
@@ -159,4 +199,7 @@
     top: 200px;
     opacity: 0.5;
     z-index:-1;
+    @media screen and (max-width:$screen-lg - 1){
+        display:none;
+    }
 }

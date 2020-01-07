@@ -62,4 +62,14 @@
             }
         }
     }
+
+
+    
+}
+.component-partners {
+    @media screen and (max-width:$screen-sm - 1){
+        overflow:hidden;
+        padding-left:60px !important;
+        padding-right:60px !important;  
+    }
 }

@@ -1,6 +1,6 @@
 declare var $: any;
 declare var jQuery:any;
-declare var window:Window;
+// declare var window:Window;
 
 class Frame{
     
@@ -16,6 +16,8 @@ class Frame{
             new TestimonialBoxes();
             new BlogPostsBoxes();
             new Partners();
+            new MobileDrawer();
+            new Hero();
 
             /* custom dropdown toggler trigger */
             // $('.dropdown-extra-trigger').on('click',function(e){

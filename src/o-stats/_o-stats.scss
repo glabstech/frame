@@ -43,6 +43,45 @@
             &:last-child{
                 border-left:1px solid #aaa;    
             }
+
+            @media screen and (max-width:$screen-lg - 1){
+                padding-left:45px;
+                .stat-figure{
+                    font-size:34px;
+                }    
+                .stat-label{
+                    font-size: 14px;
+                    line-height:16px;
+                    transform:translateY(0%);
+                }
+            }
+
+            
         }
+    }
+    @media screen and (max-width:$screen-sm - 1){
+        .section-title{
+            font-size:26px;
+            line-height:28px;
+            &+h4{
+                font-size:18px;
+            }
+        }  
+        .stats-inner{
+            .stat{
+                width:100%;
+                max-width:250px;
+                padding:0;    
+                margin:0 auto;
+                float:none;
+                border:none !important;
+                .stat-figure{
+                    font-size:45px;
+                }
+                .stat-label{
+                    transform:translateY(25%);
+                }
+            }    
+        }       
     }
 }

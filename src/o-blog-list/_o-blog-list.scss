@@ -1,0 +1,34 @@
+.blog-list{
+    article{
+        padding:25px 0;
+        clear:both;
+    }
+    .blog-thumb{
+        width:350px;
+        height:200px;
+        float:left;
+        margin-right:30px;
+        background-size:cover;
+    }
+    .blog-title{
+        font-family: 'Bebas Neue';
+        a{
+            color: $secondary-color; 
+            font-size:34px;
+            letter-spacing:0.5px;
+            &:hover{
+                color:$primary-color;
+            }
+        }
+    }
+    .blog-excerpt{
+        font-size:20px;
+        line-height:28px;
+        a{
+            color:$primary-color;
+            &:hover{
+                text-decoration:none;
+            }
+        }
+    }
+}

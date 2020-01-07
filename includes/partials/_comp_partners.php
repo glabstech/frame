@@ -3,7 +3,7 @@
 ?>
 
 <div <?php echo $fr_settings->id ?>
-    class="featured-testimonial <?php echo $fr_settings->class ?> <?php echo ($fr_settings->layout_type === 'boxed')?'container':'container-fluid' ?>"
+    class="component-partners <?php echo $fr_settings->class ?> <?php echo ($fr_settings->layout_type === 'boxed')?'container':'container-fluid' ?>"
     data-section-index="<?php echo $fr_settings->index ?>" 
     style=" 
             <?php echo $fr_settings->padding ?>

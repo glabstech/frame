@@ -68,7 +68,7 @@
     border:2px solid $secondary-color;
     -webkit-animation: m-1-ball 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
     animation: m-1-ball 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-    z-index:10;
+    z-index:9;
 }
 .m-1:after{
     width: 2px;
